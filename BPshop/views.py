@@ -20,13 +20,27 @@ def Product_Details(request):
     return render(request, 'product-details.html')
 
 def Shop(request):
-    product = Product.objects.all()
     category = Category.objects.all()
+    search_query = request.GET.getlist('search')
+    print(search_query)
+    if search_query:
+        product = Product.objects.filter(category__name__in = search_query)
+    else:
+        product = Product.objects.all()
+
     context = {
         'cat': category,
         'pr': product
     }
     return render(request, 'shop.html', context)
+def filter(request):
+    products = Product.objects.all()
 
+    material = request.POST.getlist ("materials []")
+
+    if material:
+        products = products.filter(material__in=material)
+
+    return render(request, 'shop.html', {'products': products})
 
 # Create your views here.

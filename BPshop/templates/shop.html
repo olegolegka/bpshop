@@ -12,11 +12,15 @@
 
                 <!--  Catagories  -->
                 <div class="catagories-menu">
+                    <form class="form-inline my-2 my-lg-0" method="get" action="{% url 'shop' %}" name="search">
                     {% for category in cat %}
-                    <ul>
-                        <li ><a href="#">{{category.name}}</a></li>
-                    </ul>
+                     <li>
+                    <input type="checkbox" class="checked" name="search" value="{{ category.name }}">
+                    <span>{{ category.name }}</span>
+                </li>
                     {% endfor %}
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Поиск</button>
+                        </form>
                 </div>
             </div>
         </div>
