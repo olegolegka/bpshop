@@ -58,8 +58,9 @@
                         </div>
                     </div>
                 </div>
+                <div class="row">
                 {% for product in pr %}
-                    {if pr.available == TRUE}
+                    {%if pr.available == TRUE %}
                     <div class="col-12 col-sm-6 col-md-12 col-xl-6">
                             <div class="single-product-wrapper">
                                 <!-- Product Image -->
@@ -95,8 +96,10 @@
                                 </div>
                             </div>
                         </div>
+                    {% endif %}
                     {% endfor %}
-                {% endif %}
+                    </div>
+
 
                 <div class="row">
                     <div class="col-12">
