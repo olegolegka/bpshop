@@ -12,15 +12,11 @@
 
                 <!--  Catagories  -->
                 <div class="catagories-menu">
+                    {% for category in cat %}
                     <ul>
-                        <li class="active"><a href="#">Стулья</a></li>
-                        <li><a href="#">Кровати</a></li>
-                        <li><a href="#">Аксессуары</a></li>
-                        <li><a href="#">Фурнитура</a></li>
-                        <li><a href="#">Декор</a></li>
-                        <li><a href="#">Одежда</a></li>
-                        <li><a href="#">Столы</a></li>
+                        <li ><a href="#">{{category.name}}</a></li>
                     </ul>
+                    {% endfor %}
                 </div>
             </div>
         </div>

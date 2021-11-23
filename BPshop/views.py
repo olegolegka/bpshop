@@ -21,7 +21,9 @@ def Product_Details(request):
 
 def Shop(request):
     product = Product.objects.all()
+    category = Category.objects.all()
     context = {
+        'cat': category,
         'pr': product
     }
     return render(request, 'shop.html', context)
