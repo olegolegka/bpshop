@@ -33,14 +33,8 @@ def Shop(request):
         'pr': product
     }
     return render(request, 'shop.html', context)
-def filter(request):
-    products = Product.objects.all()
-
-    material = request.POST.getlist ("materials []")
-
-    if material:
-        products = products.filter(material__in=material)
-
-    return render(request, 'shop.html', {'products': products})
+def productdetail(request,id):
+    product = Product.objects.get(id = id)
+    return render(request, 'product-details.html', {'product': product})
 
 # Create your views here.

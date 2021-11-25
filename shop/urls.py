@@ -22,6 +22,7 @@ urlpatterns = [
     path('cart/', Cart, name = 'cart'),
     path('checkout/', Checkout, name = 'checkout'),
     path('product_details/', Product_Details, name = 'product'),
+    path('products/<int:id>/', productdetail, name='productdetail'),
     path('shop/', Shop, name = 'shop'),
     path('',Home, name = 'home'),
     path('admin/', admin.site.urls),
