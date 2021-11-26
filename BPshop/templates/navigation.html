@@ -66,7 +66,7 @@
             <ul>
                 <li class="active"><a href="index.html">Главная</a></li>
                 <li><a href="{% url 'shop'%}">Товары</a></li>
-                <li><a href="{% url 'cart'%}">Корзина</a></li>
+                <li><a href="{% url 'cart:cart_detail'%}">Корзина</a></li>
                 <li><a href="{% url 'checkout'%}">Заказы</a></li>
             </ul>
         </nav>
@@ -150,7 +150,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Вс�
                                         </li>
 
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{% url 'cart'%}">Корзина</a>
+                                            <a class="nav-link" href="{% url 'cart:cart_detail'%}">Корзина</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="{% url 'checkout'%}">Заказы</a>

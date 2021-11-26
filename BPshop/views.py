@@ -1,4 +1,4 @@
-
+from cart.Forms import CartAddProductForm
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponseRedirect
 from django.contrib import messages
@@ -35,6 +35,8 @@ def Shop(request):
     return render(request, 'shop.html', context)
 def productdetail(request,id):
     product = Product.objects.get(id = id)
-    return render(request, 'product-details.html', {'product': product})
+    cart_product_form = CartAddProductForm()
+    print("!!!!!!!!!!!!!!!",cart_product_form)
+    return render(request, 'product-details.html', {'product': product,'cart_product_form': cart_product_form})
 
 # Create your views here.
